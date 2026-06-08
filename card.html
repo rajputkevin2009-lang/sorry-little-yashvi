@@ -18,17 +18,30 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+.main-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
 .card {
-    width: 90%;
-    max-width: 380px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 360px;
     background-color: #fff4f8;
     border-radius: 28px;
     padding: 30px 20px;
-    box-sizing: border-box;
     text-align: center;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 10;
 }
+    
     img{
     max-width:100%;
     height:auto;
@@ -102,20 +115,12 @@ button{
 
 <body>
     
+   <div class="hearts"> <span>💗</span> <span>💕</span> <span>💖</span> <span>💞</span> <span>❤️</span> </div> <div class="main-wrapper"> <img src="https://media.tenor.com/4wz4J8Q0kK0AAAAi/cute-cat.gif" width="120" class="cat-gif" alt="Cute Cat"> <div class="card">
+
+
+
    
 
-<div class="card">
-
-<img src="https://media.tenor.com/4wz4J8Q0kK0AAAAi/cute-cat.gif"
-width="120">
-
-    <div class="hearts">
-  <span>💗</span>
-  <span>💕</span>
-  <span>💖</span>
-  <span>💞</span>
-  <span>❤️</span>
-</div>
 
 <div id="page1" class="page active">
     <h1>💌 For My Little Yashvii 💖</h1>
