@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Little Yashvii 💌</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#2b0038,#6a005f,#ff4fa3);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#444;
+}
+
+.card{
+    width:350px;
+    background:#fff5f8;
+    border-radius:25px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 0 25px rgba(255,255,255,.3);
+}
+
+h1{
+    color:#ff4f8b;
+}
+
+button{
+    background:#ff5b99;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.page{
+    display:none;
+}
+
+.active{
+    display:block;
+}
+
+.envelope{
+    font-size:70px;
+    cursor:pointer;
+}
+
+.progress{
+    width:100%;
+    height:20px;
+    background:#ffd3e3;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.bar{
+    width:30%;
+    height:100%;
+    background:#ff5b99;
+    transition:0.5s;
+}
+.hearts span{
+    position:fixed;
+    bottom:-50px;
+    animation:float 8s linear infinite;
+    font-size:25px;
+}
+
+.hearts span:nth-child(1){left:10%;}
+.hearts span:nth-child(2){left:30%;animation-delay:2s;}
+.hearts span:nth-child(3){left:50%;animation-delay:4s;}
+.hearts span:nth-child(4){left:70%;animation-delay:1s;}
+.hearts span:nth-child(5){left:90%;animation-delay:3s;}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+    
+    <img src="https://media.tenor.com/4wz4J8Q0kK0AAAAi/cute-cat.gif"
+width="120">
+
+<div class="card">
+
+    <div class="hearts">
+  <span>💗</span>
+  <span>💕</span>
+  <span>💖</span>
+  <span>💞</span>
+  <span>❤️</span>
+</div>
+
+<div id="page1" class="page active">
+    <h1>💌 For My Little Yashvii 💖</h1>
+<p>Tap the envelope to open my heart 💕</p>
+    <p>I have something important to tell you...</p>
+    <div class="envelope" onclick="nextPage(2)">📩</div>
+    <small>Tap the envelope</small>
+</div>
+
+<div id="page2" class="page">
+    <h2>🥺 Message 1</h2>
+    <p>I know I made a mistake and I'm truly sorry.</p>
+    <button onclick="nextPage(3)">Next ❤️</button>
+</div>
+
+<div id="page3" class="page">
+    <h2>🌸 Message 2</h2>
+    <p>Your smile means more to me than you know.</p>
+    <button onclick="nextPage(4)">Next ❤️</button>
+</div>
+
+<div id="page4" class="page">
+    <h2>💖 Message 3</h2>
+    <p>I promise to learn from my mistakes and do better.</p>
+    <button onclick="nextPage(5)">Next ❤️</button>
+</div>
+
+<div id="page5" class="page">
+    <h2>🐱 Personal Note</h2>
+
+    <p>
+    Dear Little Yashvii,<br><br>
+
+    I'm genuinely sorry if I hurt your feelings.
+    You are special to me and I never wanted to be
+    the reason for your sadness.
+
+    I miss your cute messages, your smile,
+    and the happiness you bring.
+
+    Please forgive this silly human. 🥺💗
+    </p>
+
+    <button onclick="nextPage(6)">Next ❤️</button>
+</div>
+<div id="page6" class="page">
+    <h2>🌸 Why You're Special</h2>
+
+    <p>
+    • You always listen when I need someone.<br>
+    • You make ordinary days better.<br>
+    • You make me laugh when I'm stressed.<br>
+    • You're one of the most genuine people I know.<br>
+    • I never want to take our friendship for granted.
+    </p>
+
+    <button onclick="nextPage(7)">My Promise 🤝</button>
+</div>
+
+<div id="page7" class="page">
+    <h2>🤝 My Promise</h2>
+
+    <p>
+    I can't undo yesterday,<br><br>
+
+    But I can learn from it,
+    be more thoughtful,
+    listen better,
+    and try not to repeat the same mistake.<br><br>
+
+    Our friendship means a lot to me.
+    </p>
+
+    <button onclick="nextPage(8)">Forgiveness Meter ❤️</button>
+</div>
+
+<div id="page8" class="page">
+    <h2>❤️ Forgiveness Meter</h2>
+
+    <div class="progress">
+        <div class="bar" id="bar"></div>
+    </div>
+
+    <br>
+
+    <button onclick="forgive()">Tap To Forgive 💕</button>
+
+    <p id="status">30% Forgiven 🥺</p>
+    
+</div>
+
+</div>
+
+
+<script>
+
+function nextPage(num){
+    document.querySelectorAll('.page').forEach(p=>{
+        p.classList.remove('active');
+    });
+
+    document.getElementById('page'+num).classList.add('active');
+}
+
+let percent = 30;
+
+function forgive(){
+
+    if(percent < 100){
+        percent += 10;
+    }
+
+    document.getElementById("bar").style.width = percent + "%";
+
+    if(percent >= 100){
+        document.getElementById("status").innerHTML =
+        "💖 Thank You Little Yashvii 💖<br> You Made Me (Kevin) Smile Again 🥺💕 I'm not making this because I expect instant forgiveness. I made it because our friendship matters to me, and I wanted you to know I'm sorry";
+    }else{
+        document.getElementById("status").innerHTML =
+        percent + "% Forgiven ❤️";
+    }
+}
+document.addEventListener("click", () => {
+    const music = document.getElementById("bgmusic");
+    music.play();
+}, { once: true });
+</script>
+
+<audio id="bgmusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+</body>
+</html>
